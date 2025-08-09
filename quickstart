@@ -1,0 +1,20 @@
+# 1) Place this Ruby project alongside your repos:
+#   ./kiln   (this app)
+#   ./al-ULS
+#   ./9xdSq-LIMPS-FemTO-R1C
+#   ./TEmp-oral_vectraxice
+#   ./LiMp
+#   ./Eopiez
+#   ./enjoypy
+
+cd kiln && bundle install
+
+# 2) Start the Julia al-ULS server (in a separate terminal)
+#    (Use the server you already have in the repo; README shows HTTP mode)
+#    julia --project=. server.jl   # or your start script in al-ULS
+#    (Assumes it listens on localhost:8080 per README)
+#    (If different, pass --host/--port to kiln below)  6
+
+# 3) Run an optimization from Ruby:
+echo '{"matrix":[[1.0,0.5],[0.2,0.3]]}' > matrix.json
+./bin/kiln optimize --json matrix.json --method entropy --target-entropy 0.6
