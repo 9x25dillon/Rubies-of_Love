@@ -1,0 +1,5 @@
+# Run the LIMPS Python workflow (GPU flag), as described in its repo:
+./bin/kiln limps run    # spawns: python main.py --mode workflow --gpu  7
+
+# Route text through chaos RAG:
+echo "Some passage to route" | ./bin/kiln chaos-rag route   # TEmp-oral_vectraxice bits  8
